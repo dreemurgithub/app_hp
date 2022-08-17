@@ -43,7 +43,10 @@ function xuat_week(week_day,all_tkb){
     let y=document.getElementsByClassName('view');
     for (let i=0;i<sobuoi;i++) 
         {   console.log(all_tkb[i])
-            if(all_tkb[i].getDay()==week_day) y[week_day*8 + l].innerHTML = all_tkb[i].toLocaleDateString();
+            if(all_tkb[i].getDay()==week_day) 
+                {y[week_day*8 + l].innerHTML =  all_tkb[i].toLocaleDateString();
+                    y[week_day*8 + l].innerHTML=y[week_day*8 + l].innerHTML.slice(0,-5)
+                }
             if((all_tkb[i].getDay()!==week_day)) continue;
             l=l+1;
         }
