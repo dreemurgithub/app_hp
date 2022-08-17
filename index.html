@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="input.js"></script>
+    <script src="cal.js" defer></script>
+
+    <style>
+        .num {width: 4em;}
+        th, .date,.view{
+            border: solid 1px gray;
+            width: 3em;
+            height: 1.5em;
+            border-radius: 5px;
+
+        }
+        th:hover{
+            background-color: aqua;
+        }
+        th.day_1st{
+            background-color:brown;
+            border-radius: 5px;
+            color:whitesmoke;
+        }
+        th.day_1st:hover{
+            background-color: white;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+        
+      
+
+    <table>
+        <tr>
+            <th onclick="gettkb(1)">CN</th>
+            <th onclick="gettkb(2)">Thứ 2</th>
+            <th onclick="gettkb(3)">Thứ 3</th>
+            <th onclick="gettkb(4)">Thứ 4</th>
+            <th onclick="gettkb(5)">Thứ 5</th>
+            <th onclick="gettkb(6)">Thứ 6</th>
+            <th onclick="gettkb(7)">Thứ 7</th>
+            
+        </tr>
+        <tr>
+            <th onclick="first(0)" class="day_1st"></th>
+            <th onclick="first(1)" class="day_1st"></th>
+            <th onclick="first(2)" class="day_1st"></th>
+            <th onclick="first(3)" class="day_1st"></th>
+            <th onclick="first(4)" class="day_1st"></th>
+            <th onclick="first(5)" class="day_1st"></th>
+            <th onclick="first(6)" class="day_1st"></th>
+        </tr>
+        <tr>
+            <th onclick="first(7)" class="day_1st"></th>
+            <th onclick="first(8)" class="day_1st"></th>
+            <th onclick="first(9)" class="day_1st"></th>
+            <th onclick="first(10)" class="day_1st"></th>
+            <th onclick="first(11)" class="day_1st"></th>
+            <th onclick="first(12)" class="day_1st"></th>
+            <th onclick="first(13)" class="day_1st"></th>
+        </tr>
+        <tr>
+            <th onclick="first(14)" class="day_1st"></th>
+            <th onclick="first(15)" class="day_1st"></th>
+            <th onclick="first(16)" class="day_1st"></th>
+            <th onclick="first(17)" class="day_1st"></th>
+            <th onclick="first(18)" class="day_1st"></th>
+            <th onclick="first(19)" class="day_1st"></th>
+            <th onclick="first(20)" class="day_1st"></th>
+        </tr>
+        <tr>
+            <th onclick="first(21)" class="day_1st"></th>
+            <th onclick="first(22)" class="day_1st"></th>
+            <th onclick="first(23)" class="day_1st"></th>
+            <th onclick="first(24)" class="day_1st"></th>
+            <th onclick="first(25)" class="day_1st"></th>
+            <th onclick="first(26)" class="day_1st"></th>
+            <th onclick="first(27)" class="day_1st"></th>
+        </tr>
+    </table>
+
+    <p class="input"> </p>
+    <p class="input">Chú ý, thứ 1 là chủ nhật! Số buổi: </p>
+    <p class="input">Thời khóa biểu là thứ: </p>
+    <label for="">Số buổi</label><input type="number" class="num" required>
+    <input type="submit" onclick="all_buoi()" value="Nhập"><button onclick="window.location.reload(true)">Tải lại page</button>
+    
+    <br>
+ 
+<table>
+    <tr>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+
+    </tr>
+    <tr>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+    </tr>
+    <tr>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+    </tr>
+    <tr>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+    </tr>
+    <tr>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+    </tr>
+    <tr>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+        <th class="date"></th>
+    </tr>
+</table>
+<blockquote>Xuất theo ngày trong tuần</blockquote>
+<table>
+    <tr>
+        <th>CN</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+    </tr>
+    <tr>
+        <th>T2</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+    </tr>
+    <tr>
+        <th>T3</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+    </tr>
+    <tr>
+        <th>T4</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+    </tr>
+    <tr>
+        <th>T5</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+    </tr>
+    <tr>
+        <th>T6</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+      
+    </tr>
+    <tr>
+        <th>T7</th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+        <th class="view"></th>
+    </tr>
+</table>
+<script>click_day()</script>
+</body>
+</html>
