@@ -60,7 +60,7 @@ function get_num_start(d,array){
 }
 // viết nốt lệnh +date và xuất ra định dạng day:month
 function all_day(day_1st= new Date,full_array=[]){
-    let day_0 = new Date; day_0.setMonth(day_1st.getMonth());day_0.setDate(day_1st.getDate())
+    let day_0 = new Date; day_0.setFullYear(day_1st.getFullYear());day_0.setMonth(day_1st.getMonth());day_0.setDate(day_1st.getDate())//full year đề phòng lộn xộn của cuối năm tính học phí
     day_0.setDate(day_1st.getDate()-full_array[0]);console.log(day_0)//day 0 luôn là thứ 7,vì CN là day 1
     let x = [];
     for (let i=0;i<full_array.length;i++)
