@@ -27,8 +27,8 @@ function test_listen(){
 function click_day(){
     let a=[];let b=document.getElementsByClassName('day_1st')
     let x = first_day.getDay()
-    for (i=0;i<28;i++)
-    { let d= new Date(); d.setDate(first_day.getDate()-x+i)
+    for (i=0;i<35;i++)
+    { let d= new Date(); d.setDate(first_day.getDate()-7-x+i)
         a.push(d);b[i].innerText = a[i].toLocaleDateString().slice(0,-5);     
         
     }
