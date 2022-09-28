@@ -8,23 +8,22 @@ function all_buoi(){
             { for (let k=0;k<tkb.length;k++) 
                         {full_array[i*tkb.length+k]= tkb[k]+7*i }
             }
-    console.log(full_array)
-    let first_week_day = first_day.getDay()+1;    //console.log(first_week_day)
-    let start = get_num_start(first_week_day,full_array);//console.log(start)
+    let first_week_day = first_day.getDay();    //console.log(first_week_day)
+    let start = full_array.indexOf(first_week_day)
+    //console.log(start)
     if (start==='Lỗi') {alert('Nhập lại ngày bắt đầu trung với thời khóa biểu');return }
 
     let end =parseInt(sobuoi)+parseInt(start);// Bị cộng theo string thay vì interger dùng parseint()
     console.log([start,first_week_day,end])
     let new_tkb=[];
     let i = start;
-    for (i;i<end;i++) new_tkb.push(full_array[i]) // <=end vì số buổi là khoảng cách, phải+1 để tới end
-        //all TKB là tất cả các buổi học, all_tkb_day và all_tkb_month là xuất ra ngày và tháng
-
+    for (i;i<end;i++) new_tkb.push(full_array[i]) 
+    console.log(new_tkb)
     //let all_tkb = all_day(first_day,new_tkb);
     let all_tkb =[first_day];
-    for (let i=1;i<end;i++){
+    for (let i=1;i<new_tkb.length;i++){
         all_tkb[i]=new Date(all_tkb[0].getFullYear(),all_tkb[0].getMonth(),all_tkb[0].getDate()) ;
-        all_tkb[i].setDate(all_tkb[0].getDate()-full_array[0] +full_array[i])}
+        all_tkb[i].setDate(all_tkb[0].getDate()-new_tkb[0] +new_tkb[i])   }
     //xuất thông tin từ dưới
     let all_tkb_day = [];let all_tkb_month = [];
     for (let i=0;i<all_tkb.length;i++){

@@ -55,7 +55,7 @@ function sort_tkb(){
 function gettkb(x){
     let a=document.getElementsByClassName('input');
     tkb.push(x);
-    a[2].innerHTML='Thời khóa biểu hệ thống là thứ: '+tkb;
+    a[2].innerHTML=`Thời khóa biểu hệ thống là thứ: ${tkb.map(el=>el+1)}`;
     console.log(tkb)         
 }
 // biến global là tkb, first_day, sobuoi còn lại là local
